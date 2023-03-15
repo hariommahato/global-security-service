@@ -1,0 +1,32 @@
+.mainDiv{
+    min-height: 15vmax;
+    margin-top: 3rem;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.h3{
+    color: white;
+    text-align: center;
+}
+.contentContainer{
+    width: 70%;
+    margin:auto;
+    margin-bottom: 2rem;
+}
+.cardStyle{
+    height: 8rem;
+    border-radius: none;
+    background-color:#EEEEEE ;
+    margin: auto;
+}
+.content{
+    text-align: center;
+    color: gray;
+    padding: 1rem;
+}

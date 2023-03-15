@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "../../styles/Header.module.css";
 import logo from "../../images/logo.png";
+import Link from "next/link";
 function Header() {
   return (
     <Navbar
@@ -17,14 +18,30 @@ function Header() {
       <Container>
         <Image src={logo} width={80} height={80} />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Brand href="#">Global Security Service</Navbar.Brand>
+        <Navbar.Brand as={Link} href="/">
+          Global Security Service
+        </Navbar.Brand>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">About Us</Nav.Link>
-            <Nav.Link href="#pricing">Services</Nav.Link>
-            <Nav.Link href="#pricing">Contact Us</Nav.Link>
+            <Nav.Link as={Link} href="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} href="about">
+              About Us
+            </Nav.Link>
+            <Nav.Link as={Link} href="services">
+              Services
+            </Nav.Link>
+            <Nav.Link as={Link} href="contact">
+              Contact Us
+            </Nav.Link>
+            <Nav.Link as={Link} href="/feedback">
+              Feedback
+            </Nav.Link>
+            <Nav.Link as={Link} href="/faq" style={{color:"red",textDecoration:"underline"}}>
+             Faq
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

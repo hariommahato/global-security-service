@@ -1,0 +1,39 @@
+.maindiv{
+    margin-top: 3rem;
+}
+.heading{
+    color: red;
+    font-weight: bold;
+}
+.bgImageDiv{
+    width: 80%;
+    margin: auto;
+    min-height: 20vmax;
+    height: auto;
+    margin-top: 2rem;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+   
+}
+.card{
+    width: 13rem;
+    margin: auto;
+    min-height: 15rem;
+    margin-bottom: 1rem;
+
+}
+
+.cardDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 0 0 ;
+ 
+}
+.imgBorder{
+    border-radius: 10%;
+}

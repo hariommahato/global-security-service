@@ -1,0 +1,16 @@
+.footer{
+    /* background-color:#EEEEEE ; */
+    display:flex;
+    margin-top: 3rem;
+    justify-content: space-evenly;
+    padding: 2rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.links{
+    text-decoration: none;
+    color: black;
+}
+.links:hover{
+    color: red;
+}

@@ -1,0 +1,13 @@
+.mainDiv{
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+@media only screen and (max-width: 600px) {
+   .mainDiv{
+    width: 100%;
+    padding: 1rem;
+   }
+  }

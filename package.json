@@ -9,18 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.12",
     "@reduxjs/toolkit": "^1.9.3",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
+    "cloudinary": "^1.35.0",
+    "crypto": "^1.0.1",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
+    "mongoose": "^7.0.1",
     "next": "13.2.3",
+    "next-auth": "^4.20.1",
+    "next-connect": "^0.13.0",
+    "next-redux-wrapper": "^8.1.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-pro-sidebar": "^1.0.0",
     "react-redux": "^8.0.5",
     "react-slick": "^0.29.0",
+    "react-swipeable-views": "^0.14.0",
     "redux": "^4.2.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "validator": "^13.9.0"
   }
 }

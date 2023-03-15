@@ -4,7 +4,9 @@ import Slider from "react-slick";
 import { CiRead } from "react-icons/ci";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGetServicesQuery } from "@/services/api";
 const Services = () => {
+  const { data } = useGetServicesQuery();
   let settings = {
     dots: true,
     infinite: false,
@@ -51,208 +53,39 @@ const Services = () => {
           <p style={{ fontStyle: "italic", color: "red", textAlign: "center" }}>
             state of the art quality service
           </p>
-          <p
-            style={{
-              width: "80%",
-              margin: "auto",
-              fontSize: "1vmax",
-              color: "gray",
-              textAlign: "center",
-            }}
-          >
-            As a security services provider, using state-of-the-art systems and
-            with the most efficient usage of resources, KSS can provide you the
-            maximum security per rupees spent! All this without compromising on
-            our core values of integrity, responsibility and having you and your
-            assets safe and secure at all times.
-          </p>
         </div>
       </div>
 
       <div style={{ width: "80%", margin: "auto", marginTop: "2rem" }}>
         <Slider {...settings}>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>{" "}
-          <div>
-            <Card style={{ width: "12rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "12rem", margin: "auto" }}>
-              <Card.Img
-                variant="top"
-                src="https://images.pexels.com/photos/7889450/pexels-photo-7889450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                style={{
-                  backgroundSize: "cover",
-                  objectFit: "cover",
-                }}
-              />
-              <Card.Body>
-                <Card.Title>Guarding Services</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <CiRead />
-                <Button
-                  variant="link"
-                  style={{ color: "red", textDecoration: "none" }}
-                >
-                  Read More
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
+          {data?.services?.map((item, i) => {
+            return (
+              <div key={i}>
+                <Card style={{ width: "14rem"}}>
+                  <Card.Img
+                    variant="top"
+                    src={item?.images?.url}
+                    style={{
+                      backgroundSize: "cover",
+                      objectFit: "cover",
+                      height:"15rem"
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title>{item?.title}</Card.Title>
+                    <Card.Text>{item?.description}</Card.Text>
+                    <CiRead />
+                    <Button
+                      variant="link"
+                      style={{ color: "red", textDecoration: "none" }}
+                    >
+                      Read More
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </>
