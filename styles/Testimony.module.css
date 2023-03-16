@@ -1,5 +1,5 @@
 .mainDiv{
-    min-height: 15vmax;
+    height:15rem;
     margin-top: 3rem;
     object-fit: cover;
     background-size: cover;
@@ -14,19 +14,10 @@
     color: white;
     text-align: center;
 }
-.contentContainer{
-    width: 70%;
-    margin:auto;
-    margin-bottom: 2rem;
-}
-.cardStyle{
-    height: 8rem;
-    border-radius: none;
-    background-color:#EEEEEE ;
+.card{
+    width: 100%;
     margin: auto;
-}
-.content{
     text-align: center;
-    color: gray;
-    padding: 1rem;
+    min-height: 7rem;
+
 }

@@ -14,6 +14,7 @@ const Testimony = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
     <div
       style={{
@@ -26,22 +27,35 @@ const Testimony = () => {
           Clients <span style={{ color: "red" }}>Testimonial</span>
         </h3>
       </div>
-      <div className={styles.contentContainer}>
-        <Card
-          style={{
-            height: "9rem",
-            borderRadius: "none",
-            backgroundColor: "#EEEEEE",
-            margin: "auto",
-          }}
-        >
-          <p style={{ textAlign: "center", color: "gray", padding: "1rem" }}>
-            We would like to thank Kalinchok Security Services and in particular
-            the guards in our residence for their service. We have been very
-            happy with their service. Thank you for the past 4 years.
-          </p>
-          <span style={{ textAlign: "center" }}>-Hariom Mahato</span>
-        </Card>
+
+      <div
+        style={{
+          width: "50%",
+        }}
+      >
+        <Slider {...settings}>
+          {data?.feedbackdata?.map((item, i) => {
+            return (
+              <div className={styles.testoContainer}>
+                <Card className={styles.card}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      gap:"1rem"
+                    }}
+                  >
+                    <div>
+                      <h6> {item?.message}</h6>
+                    </div>
+                    <p>--{item.fullname}</p>
+                  </div>
+                </Card>
+              </div>
+            );
+          })}
+        </Slider>
       </div>
     </div>
   );
