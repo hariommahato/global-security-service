@@ -17,14 +17,14 @@ const Carousel = () => {
   const { data, isError, isLoading } = useGetCarouselDetailsQuery(id);
   const [
     updateCarousel,
-    { isSuccess, isError: updateError, isLoading: updateLoading },
+    { isSuccess, isError: updateError, isLoading: updateLoading ,},
   ] = useUpdateCarouselMutation();
-  const [images, setImages] = useState([]);
-  const [oldImages, setOldImages] = useState([]);
-  const [imagePreview, setImagesPreviews] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [oldVideo, setOldVideo] = useState([]);
+
   useEffect(() => {
     if (data) {
-      setOldImages(data?.carousel?.images);
+      setOldVideo(data?.carousel?.videos);
     }
     if (isError) {
       toast.error("Error Fetching Data");
@@ -39,24 +39,23 @@ const Carousel = () => {
   const updateProductSubmitHandler = (e) => {
     e.preventDefault();
     const carouselData = {
-      images,
+      videos,
     };
     updateCarousel({ id, carouselData });
   };
   const updateProductImagesChange = (e) => {
     const files = Array.from(e.target.files);
 
-    setImages([]);
-    setImagesPreviews([]);
-    setOldImages([]);
+    setVideos([]);
+    
+    setOldVideo([]);
 
     files.forEach((file) => {
       const reader = new FileReader();
 
       reader.onload = () => {
         if (reader.readyState === 2) {
-          setImagesPreviews((old) => [...old, reader.result]);
-          setImages((old) => [...old, reader.result]);
+          setVideos((old) => [...old, reader.result]);
         }
       };
       reader.readAsDataURL(file);
@@ -85,35 +84,12 @@ const Carousel = () => {
               <h5>Update Carousel Data</h5>
               <input
                 type="file"
-                name="images"
-                accept="image/*"
+                name="videos"
+                accept="video/*"
                 onChange={updateProductImagesChange}
                 multiple
               />
-              <div id="createProductFormImage">
-                {oldImages &&
-                  oldImages.map((image, index) => (
-                    <Image
-                      key={index}
-                      src={image.url}
-                      alt="Old Product Preview"
-                      width={100}
-                      height={100}
-                    />
-                  ))}
-              </div>
-
-              <div id="createProductFormImage">
-                {imagePreview.map((image, index) => (
-                  <Image
-                    key={index}
-                    src={image}
-                    alt="Product Preview"
-                    width={100}
-                    height={100}
-                  />
-                ))}
-              </div>
+        
               {console.log(updateError)}
               <Button
                 id="createProductBtn"

@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p style={{textAlign:"center",color:"gray"}}>All Right Reserved &copy; Global Security Services  --CreatedBy:<span style={{color:"red"}}>Unitech It Solution</span> </p>
+        <p style={{textAlign:"center",color:"gray"}}>All Right Reserved &copy; Global Security Services   --Designed & Developed By:<span style={{color:"red"}}>Unitech It Solution</span> </p>
       </div>
     </footer>
   );

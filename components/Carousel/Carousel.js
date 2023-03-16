@@ -11,14 +11,10 @@ export default function CarouselComponent() {
       <Carousel fade>
        
         {data?.carousel?.map((item, i) => {
-          return item?.images?.map((data) => {
+          return item?.videos?.map((data) => {
             return (
               <Carousel.Item className={styles.carouselItem} key={data?.url}>
-                <img
-                  className="d-block w-100"
-                  src={`${data?.url}`}
-                  alt="First slide"
-                />
+              <video src={data?.url} width="100%" height="500" muted autoPlay loop />
               </Carousel.Item>
             );
           });

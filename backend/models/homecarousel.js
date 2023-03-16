@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const carouselSchema = new mongoose.Schema({
-  images: [
+  videos: [
     {
       public_id: {
         type: String,
@@ -14,5 +14,5 @@ const carouselSchema = new mongoose.Schema({
     },
   ],
 });
-export default mongoose.models?.HomeCarousel ||
-  mongoose.model("HomeCarousel", carouselSchema);
+export default mongoose.models?.Carousel ||
+  mongoose.model("Carousel", carouselSchema);

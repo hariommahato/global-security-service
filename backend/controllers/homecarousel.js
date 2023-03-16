@@ -4,16 +4,18 @@ import catchAsyncErrors from "../middleware/catchAsyncErrors";
 import cloudinary from "cloudinary";
 cloudinaryConfig();
 export const createHomeCarousel = catchAsyncErrors(async (req, res, next) => {
-  let images = req.body.images;
-  let imageLinks = [];
+  let videos = req.body.videos;
 
-  for (let i = 0; i < images?.length; i++) {
-    const result = await cloudinary.v2.uploader.upload(images[i], {
+  let videoLinks = [];
+  for (let i = 0; i < videos?.length; i++) {
+    const result = await cloudinary.v2.uploader.upload(videos[i], {
+      resource_type: "video",
       folder: "HomeCarousel",
     });
-    imageLinks.push({ public_id: result.public_id, url: result.secure_url });
+
+    videoLinks.push({ public_id: result.public_id, url: result.secure_url });
   }
-  req.body.images = imageLinks;
+  req.body.videos = videoLinks;
   const carousel = await Carousel.create(req.body);
   res.status(200).json({
     success: true,
@@ -67,33 +69,35 @@ export const updateCarousel = async (req, res) => {
         message: "Carousel Not Found",
       });
     } else {
-      let images = [];
-      if (typeof req.body.images === "string") {
-        images.push(req.body.images);
+      let videos = [];
+      if (typeof req.body.videos === "string") {
+        videos.push(req.body.videos);
       } else {
-        images = req.body.images;
+        videos = req.body.videos;
       }
 
-      if (images !== undefined) {
+      if (videos !== undefined) {
         // Deleting Images From Cloudinary
-        for (let i = 0; i < carousel.images.length; i++) {
-          await cloudinary.v2.uploader.destroy(carousel.images[i].public_id);
+        for (let i = 0; i < carousel.videos.length; i++) {
+          await cloudinary.v2.uploader.destroy(carousel.videos[i].public_id,{
+            resource_type:"video"
+          });
         }
 
-        const imagesLinks = [];
+        const videoLinks = [];
 
-        for (let i = 0; i < images.length; i++) {
-          const result = await cloudinary.v2.uploader.upload(images[i], {
-            folder: "carousel",
+        for (let i = 0; i < videos.length; i++) {
+          const result = await cloudinary.v2.uploader.upload(videos[i], {
+            folder: "Videos",
+            resource_type:"video"
           });
-
-          imagesLinks.push({
+          videoLinks.push({
             public_id: result.public_id,
             url: result.secure_url,
           });
         }
 
-        req.body.images = imagesLinks;
+        req.body.videos = videoLinks;
       }
       carousel = await Carousel.findByIdAndUpdate(req.query.id, req.body, {
         new: true,
@@ -105,7 +109,9 @@ export const updateCarousel = async (req, res) => {
         carousel,
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const deleteCarousel = catchAsyncErrors(async (req, res, next) => {
@@ -116,8 +122,8 @@ export const deleteCarousel = catchAsyncErrors(async (req, res, next) => {
       message: "Carousel Not Found",
     });
 
-  for (let i = 0; i < carousel.images.length; i++) {
-    await cloudinary.v2.uploader.destroy(carousel.images[i].public_id);
+  for (let i = 0; i < carousel.videos.length; i++) {
+    await cloudinary.v2.uploader.destroy(carousel.videos[i].public_id);
   }
   await Carousel.findByIdAndDelete(req.query.id);
   res.status(200).json({ success: true });

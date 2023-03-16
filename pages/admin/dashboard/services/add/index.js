@@ -52,6 +52,8 @@ const Services = () => {
     }
   };
 
+  {console.log(images)}
+
   return (
     <>
       {isLoading ? (

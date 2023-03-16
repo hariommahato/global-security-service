@@ -27,7 +27,21 @@ const Testimony = () => {
         </h3>
       </div>
       <div className={styles.contentContainer}>
-       ∑∑∑∑
+        <Card
+          style={{
+            height: "9rem",
+            borderRadius: "none",
+            backgroundColor: "#EEEEEE",
+            margin: "auto",
+          }}
+        >
+          <p style={{ textAlign: "center", color: "gray", padding: "1rem" }}>
+            We would like to thank Kalinchok Security Services and in particular
+            the guards in our residence for their service. We have been very
+            happy with their service. Thank you for the past 4 years.
+          </p>
+          <span style={{ textAlign: "center" }}>-Hariom Mahato</span>
+        </Card>
       </div>
     </div>
   );

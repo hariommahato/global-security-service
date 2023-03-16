@@ -63,7 +63,8 @@ export default function FullWidthTabs() {
           onChange={handleChange}
           indicatorColor="secondary"
           textColor="inherit"
-          variant="fullWidth"
+          variant="scrollable"
+          scrollButtons="auto"
           aria-label="full width tabs example"
         >
           {data?.services?.map((item, i) => {
@@ -85,7 +86,7 @@ export default function FullWidthTabs() {
                   textAlign: "justify",
                 }}
               >
-               {item?.description}
+                {item?.description}
               </p>
             </TabPanel>
           );

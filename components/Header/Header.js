@@ -40,7 +40,7 @@ function Header() {
               Feedback
             </Nav.Link>
             <Nav.Link as={Link} href="/faq" style={{color:"red",textDecoration:"underline"}}>
-             Faq
+             FAQS
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

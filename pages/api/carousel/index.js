@@ -12,7 +12,7 @@ handler.post(createHomeCarousel).get(getAllCarousel);
 export const config = {
   api: {
       bodyParser: {
-          sizeLimit: '1000mb' // Set desired value here
+          sizeLimit: '300000mb' // Set desired value here
       }
   }
 }

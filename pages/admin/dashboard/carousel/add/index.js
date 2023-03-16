@@ -11,8 +11,7 @@ import Image from "next/image";
 const Carousel = () => {
   const [createHomeCarousel, { isError, isLoading, isSuccess }] =
     useCreateHomeCarouselMutation();
-  const [images, setImages] = useState([]);
-  const [imagePreview, setImagePreview] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     if (isError) {
@@ -24,31 +23,32 @@ const Carousel = () => {
   });
   const createProductSubmitHandler = (e) => {
     e.preventDefault();
-    const data = {
-      images,
-    };
+   const data ={
+    videos
+   }
     createHomeCarousel(data);
   };
+  
   {console.log(isError)}
 
   const createProductImagesChange = (e) => {
     const files = Array.from(e.target.files);
 
-    setImages([]);
-    setImagePreview([]);
+    setVideos([]);
+
     files.forEach((file) => {
       const reader = new FileReader();
 
       reader.onload = () => {
         if (reader.readyState === 2) {
-          setImagePreview((old) => [...old, reader.result]);
-          setImages((old) => [...old, reader.result]);
+          setVideos((old) => [...old, reader.result]);
         }
       };
 
       reader.readAsDataURL(file);
     });
   };
+  {console.log(videos)}
   return (
     <>
       {isLoading ? (
@@ -64,25 +64,12 @@ const Carousel = () => {
               <div id="createProductFormFile">
                 <input
                   type="file"
-                  name="image"
-                  accept="image/*"
+                  name="videos"
+                  accept="video/*"
                   onChange={createProductImagesChange}
                   multiple
                 />
               </div>
-
-              <div className={styles.imagePreview}>
-                {imagePreview.map((image, index) => (
-                  <Image
-                    key={index}
-                    src={image}
-                    alt="Product Preview"
-                    width={50}
-                    height={50}
-                  />
-                ))}
-              </div>
-
               <Button
                 id="createProductBtn"
                 type="submit"

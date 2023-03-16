@@ -19,8 +19,11 @@ const Carousel = () => {
       toast.success("Deleted Successfully");
     }
   }, [isSuccess, toast]);
+
+  {console.log(data)}
   return (
     <>
+
       {isLoading ? (
         <Loader />
       ) : (
@@ -33,6 +36,7 @@ const Carousel = () => {
               // margin
             }}
           >
+  
             <h5>All Carousel List </h5>
             <Table responsive striped>
               <thead>
@@ -47,7 +51,7 @@ const Carousel = () => {
                   return (
                     <tr key={i}>
                       <td>{item._id}</td>
-                      {item?.images?.map((item) => {
+                      {item?.videos?.map((item) => {
                         return <td key={item.url}>{item.url}</td>;
                       })}
                       <td>
@@ -58,6 +62,7 @@ const Carousel = () => {
                             gap: "0.5rem",
                           }}
                         >
+                        {console.log(data)}
                           <Link
                             href={`/admin/dashboard/carousel/${item?._id}`}
                             style={{ textDecoration: "none" }}

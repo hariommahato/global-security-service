@@ -181,11 +181,10 @@ const Contact = () => {
             </Card>
           </Col>
         </Row>
-        <div style={{marginTop:"2rem",width:"100%"}}>
+        <div style={{marginTop:"2rem",width:"1"}}>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14127.907148187232!2d85.34462199771188!3d27.718002980080442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1990d274b3fb%3A0xccb2e767fee08d62!2sMultiple%20Security%20Services%20Pvt.Ltd!5e0!3m2!1sen!2snp!4v1678260457561!5m2!1sen!2snp"
-            width="600"
-            height="450"
+          
             style={{ border: "none" }}
             allowfullscreen=""
             loading="lazy"

@@ -17,11 +17,11 @@ const Services = () => {
           style={{
             backgroundImage: `url("https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,
             height: "20vmax",
-            width: "50vmax",
             objectFit: "cover",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
+          className={styles.imgDiv}
         ></div>
 
         <div>
@@ -65,7 +65,10 @@ const Services = () => {
         <h3 style={{ textAlign: "center" }}>
           Our <span style={{ color: "red" }}>Services</span> In Brief
         </h3>
+        <div className={styles.tabContainer}>
         <FullWidthTabs />
+        </div>
+       
       </div>
     </>
   );
