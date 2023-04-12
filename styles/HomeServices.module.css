@@ -1,0 +1,20 @@
+.mainDiv{
+    margin-top: 2vmax;
+}
+.topDetailDiv{
+    width: 100%;
+    margin: auto;
+}
+.topHeadline{
+    color: red;
+    font-weight: bold;
+}.topParagraph{
+    font-style: italic;
+    color: red;
+    text-align: center;
+}
+.sliderDiv{
+    width: 80%;
+    margin: auto;
+    margin-top: 2vmax;
+}

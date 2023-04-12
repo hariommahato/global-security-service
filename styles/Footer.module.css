@@ -6,10 +6,12 @@
     padding: 2rem;
     text-align: center;
     flex-wrap: wrap;
+    background-color: #060047;
+    color: white;
 }
 .links{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .links:hover{
     color: red;

@@ -10,8 +10,7 @@ function Header() {
     <Navbar
       collapseOnSelect
       expand="lg"
-      bg="light"
-      variant="light"
+
       className={styles.navbar}
       sticky="top"
     >

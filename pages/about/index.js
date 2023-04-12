@@ -1,11 +1,10 @@
 import MeetOurTeam from "@/components/MeetOurTeam/MeetOurTeam";
-import { wrapper } from "@/services/store";
-import Image from "next/legacy/image";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import styles from "../../styles/About.module.css";
-import { getSession } from "next-auth/react";
+
 import { useGetAboutQuery } from "@/services/api";
+import Image from "next/image";
 
 const About = () => {
   const { data: aboutData } = useGetAboutQuery();
@@ -14,7 +13,6 @@ const About = () => {
       <div>
         <div className={styles.mainDiv}>
           <div className={styles.text}>
-            {console.log(aboutData)}
             <h3>ABOUT COMPANY</h3>
           </div>
         </div>
@@ -22,21 +20,14 @@ const About = () => {
         {aboutData?.aboutdata?.map((item, i) => {
           return (
             <Row className={styles.row}>
-              <Col
-                xs={12}
-                sm={12}
-                md={12}
-                lg={6}
-                xl={6}
-                style={{
-                  minHeight: "30rem",
-                  backgroundImage: `url(${item?.images?.url})`,
-                  objectFit: "cover",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div></div>
+              <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+                <Image
+                  src={item?.images?.url}
+                  height={"0"}
+                  width={"0"}
+                  sizes="100vw"
+                  className={styles.images}
+                />
               </Col>
               <Col xs={12} sm={12} md={12} lg={6} xl={6}>
                 <div>

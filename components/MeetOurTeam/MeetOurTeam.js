@@ -55,7 +55,7 @@ const MeetOurTeam = () => {
         <div
           className={styles.bgImageDiv}
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")`,
+            backgroundImage: `url("https://images.unsplash.com/photo-1614627264058-f3e35e86d424?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80")`,
           }}
         >
           <div
@@ -68,9 +68,7 @@ const MeetOurTeam = () => {
                 return (
                   <div>
                     <Card className={styles.card}>
-                      <div
-                       className={styles.cardDiv}
-                      >
+                      <div className={styles.cardDiv}>
                         <Image
                           src={item?.images?.url}
                           width={80}

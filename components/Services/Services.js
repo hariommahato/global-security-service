@@ -1,12 +1,14 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import Slider from "react-slick";
-import { CiRead } from "react-icons/ci";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGetServicesQuery } from "@/services/api";
+import { AiFillEye } from "react-icons/ai";
+import styles from "../../styles/HomeServices.module.css";
+import Loader from "../Loader/Loader";
 const Services = () => {
-  const { data } = useGetServicesQuery();
+  const { data, isLoading } = useGetServicesQuery();
   let settings = {
     dots: true,
     infinite: false,
@@ -45,49 +47,58 @@ const Services = () => {
   };
   return (
     <>
-      <div style={{ marginTop: "3rem" }}>
-        <div style={{ width: "100%", margin: "auto" }}>
-          <h3 style={{ textAlign: "center" }}>
-            We <span style={{ color: "red", fontWeight: "bold" }}>Provide</span>
-          </h3>
-          <p style={{ fontStyle: "italic", color: "red", textAlign: "center" }}>
-            state of the art quality service
-          </p>
-        </div>
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className={styles.mainDiv}>
+            <div className={styles.topDetailDiv}>
+              <h3 className="text-center">
+                We <span className={styles.topHeadline}>Provide</span>
+              </h3>
+              <p
+               className={styles.topParagraph}
+              >
+                state of the art quality service
+              </p>
+            </div>
+          </div>
 
-      <div style={{ width: "80%", margin: "auto", marginTop: "2rem" }}>
-        <Slider {...settings}>
-          {data?.services?.map((item, i) => {
-            return (
-              <div key={i}>
-                <Card style={{ width: "14rem"}}>
-                  <Card.Img
-                    variant="top"
-                    src={item?.images?.url}
-                    style={{
-                      backgroundSize: "cover",
-                      objectFit: "cover",
-                      height:"15rem"
-                    }}
-                  />
-                  <Card.Body>
-                    <Card.Title>{item?.title}</Card.Title>
-                    <Card.Text>{item?.description}</Card.Text>
-                    <CiRead />
-                    <Button
-                      variant="link"
-                      style={{ color: "red", textDecoration: "none" }}
-                    >
-                      Read More
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-            );
-          })}
-        </Slider>
-      </div>
+          <div className={styles.sliderDiv}>
+            <Slider {...settings}>
+              {data?.services?.map((item, i) => {
+                return (
+                  <div key={i}>
+                    <Card style={{ width: "14rem", margin: "auto" }}>
+                      <Card.Img
+                        variant="top"
+                        src={item?.images?.url}
+                        style={{
+                          backgroundSize: "cover",
+                          objectFit: "cover",
+                          height: "15rem",
+                        }}
+                      />
+                      <Card.Body>
+                        <Card.Title>{item?.title}</Card.Title>
+                        <Card.Text>{item?.description?.slice(0,20)}</Card.Text>
+                        <Card.Link
+                          href="/services"
+                          style={{ color: "red", textDecoration: "none" }}
+                        >
+                          {" "}
+                          <AiFillEye />
+                          ReadMore
+                        </Card.Link>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        </>
+      )}
     </>
   );
 };

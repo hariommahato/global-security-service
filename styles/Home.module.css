@@ -1,26 +1,39 @@
-.welcomedataContainer{
+.welcomedataContainer {
   width: 100%;
-  margin:auto;
-  margin-top: 3rem;
+  margin: auto;
+  margin-top: 3vmax;
   background-size: cover;
   object-fit: cover;
   background-position: center;
   background-attachment: fixed;
 }
-.h3{
+.h3 {
   text-align: center;
   padding: 2vmax;
   color: white;
 }
-.span{
+.span {
   color: red;
   font-weight: bold;
 }
-.homeDescriptionContainer{
+.homeDescriptionContainer {
   width: 80%;
   margin: auto;
   color: white;
   text-align: center;
   padding: 0.5vmax;
   font-size: 1vmax;
+}
+@media only screen and (max-width: 600px) {
+.h3{
+  padding: 0;
+ }
+ .homeDescriptionContainer{
+  font-size: 2vmax;
+  width: 100%;
+  text-align: justify;
+  padding: 1vmax;
+ }.welcomedataContainer{
+  margin-top:0px;
+ }
 }

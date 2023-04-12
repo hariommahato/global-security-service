@@ -14,10 +14,23 @@
     color: white;
     text-align: center;
 }
+.sliderContainer{
+    width: 50%;
+}
 .card{
+
     width: 100%;
     margin: auto;
     text-align: center;
     min-height: 7rem;
 
 }
+@media only screen and (max-width: 600px) {
+    .card{
+        width: 100%;
+    }
+    .sliderContainer{
+        width: 80%;
+        margin:auto;
+    }
+    }

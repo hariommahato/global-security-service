@@ -1,9 +1,9 @@
 import nextconnect  from 'next-connect'
 import dbConnect from '@/backend/config/dbConnect'
-import {updateTeam,deleteTeam,getTeamDetails} from '../../../backend/controllers/team'
+import {updateAbout,deleteAbout,getAboutDetails} from '../../../backend/controllers/about'
 const handler=nextconnect();
 dbConnect();
-handler.get(getTeamDetails).put(updateTeam).delete(deleteTeam);
+handler.get(getAboutDetails).put(updateAbout).delete(deleteAbout);
 export const config = {
     api: {
         bodyParser: {

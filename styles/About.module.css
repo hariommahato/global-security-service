@@ -1,6 +1,6 @@
 
 .mainDiv {
-  height: 7rem;
+  height: 14vmax;
   width: 100%;
   object-fit: cover;
   background-attachment: fixed;
@@ -8,12 +8,18 @@
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80");
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .text {
   color: white;
-  color: white;
-    text-align: center;
-    padding-top: 2rem;
+  
+}
+.images{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .row{
   display: flex;
@@ -22,3 +28,10 @@
   margin: auto;
   margin-top: 3rem;
 }
+@media only screen and (max-width: 600px) {
+  .row{
+    width: 100%;
+    margin-top: 1vmax;
+    text-align: justify;
+  }
+  }

@@ -3,7 +3,7 @@ import { HYDRATE } from "next-redux-wrapper";
 export const globalApi = createApi({
   reducerPath: "globalApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/api",
+    baseUrl: "http://localhost:3000/api/",
   }),
   tagTypes: [
     "Carousel",
@@ -14,7 +14,7 @@ export const globalApi = createApi({
     "Feedback",
     "Faq",
     "About",
-    "Team"
+    "Team",
   ],
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === HYDRATE) {
@@ -24,7 +24,7 @@ export const globalApi = createApi({
   endpoints: (builder) => ({
     getHomeCarousel: builder.query({
       query: () => ({
-        url: "/carousel",
+        url: "carousel",
         method: "GET",
       }),
       providesTags: ["Carousel"],
@@ -46,7 +46,7 @@ export const globalApi = createApi({
     getCarouselDetails: builder.query({
       query: (id) => {
         return {
-          url: `/carousel/${id}`,
+          url: `carousel/${id}`,
           method: "GET",
         };
       },
@@ -55,7 +55,7 @@ export const globalApi = createApi({
     updateCarousel: builder.mutation({
       query: ({ id, carouselData }) => {
         return {
-          url: `/carousel/${id}`,
+          url: `carousel/${id}`,
           method: "PUT",
           body: carouselData,
           prepareHeaders: (headers) => {
@@ -78,7 +78,7 @@ export const globalApi = createApi({
     }),
     getWelcomeData: builder.query({
       query: () => ({
-        url: "/welcomedata",
+        url: "welcomedata",
         method: "GET",
       }),
       providesTags: ["Welcome"],
@@ -86,7 +86,7 @@ export const globalApi = createApi({
     getWelcomeDetails: builder.query({
       query: (id) => {
         return {
-          url: `/welcomedata/${id}`,
+          url: `welcomedata/${id}`,
           method: "GET",
         };
       },
@@ -164,7 +164,7 @@ export const globalApi = createApi({
     updateServices: builder.mutation({
       query: ({ id, data }) => {
         return {
-          url: `/services/${id}`,
+          url: `services/${id}`,
           method: "PUT",
           body: data,
           prepareHeaders: (headers) => {
@@ -179,7 +179,7 @@ export const globalApi = createApi({
     deleteService: builder.mutation({
       query: (id) => {
         return {
-          url: `/services/${id}`,
+          url: `services/${id}`,
           method: "DELETE",
         };
       },
@@ -188,7 +188,7 @@ export const globalApi = createApi({
 
     getClient: builder.query({
       query: () => ({
-        url: "/client",
+        url: "client",
         method: "GET",
       }),
       providesTags: ["Client"],
@@ -196,7 +196,7 @@ export const globalApi = createApi({
     createClient: builder.mutation({
       query: (data) => {
         return {
-          url: `/client`,
+          url: `client`,
           method: "POST",
           body: data,
           prepareHeaders: (headers) => {
@@ -210,7 +210,7 @@ export const globalApi = createApi({
     getClientDetails: builder.query({
       query: (id) => {
         return {
-          url: `/client/${id}`,
+          url: `client/${id}`,
           method: "GET",
         };
       },
@@ -406,8 +406,6 @@ export const globalApi = createApi({
       invalidatesTags: ["Faq"],
     }),
 
-
-
     getAbout: builder.query({
       query: () => ({
         url: "/about",
@@ -516,16 +514,6 @@ export const globalApi = createApi({
       },
       invalidatesTags: ["Team"],
     }),
-
-
-
-
-
-
-
-
-
-
 
     getUsers: builder.query({
       query: () => ({

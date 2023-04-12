@@ -1,4 +1,7 @@
-import { useGetHomeCarouselQuery, useGetWelcomeDataQuery } from "@/services/api";
+import {
+  useGetHomeCarouselQuery,
+  useGetWelcomeDataQuery,
+} from "@/services/api";
 import Image from "next/image";
 import Carousel from "react-bootstrap/Carousel";
 import { FaUnsplash } from "react-icons/fa";
@@ -9,12 +12,19 @@ export default function CarouselComponent() {
   return (
     <>
       <Carousel fade>
-       
         {data?.carousel?.map((item, i) => {
           return item?.videos?.map((data) => {
             return (
               <Carousel.Item className={styles.carouselItem} key={data?.url}>
-              <video src={data?.url} width="100%" height="500" muted autoPlay loop />
+                <video
+                  src={data?.url}
+                  muted
+                  autoPlay
+                  loop
+                  style={{
+                    width: "100%",
+                  }}
+                />
               </Carousel.Item>
             );
           });
@@ -23,5 +33,3 @@ export default function CarouselComponent() {
     </>
   );
 }
-
-

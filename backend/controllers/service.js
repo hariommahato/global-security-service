@@ -9,8 +9,7 @@ export const createServices = catchAsyncErrors(async (req, res, next) => {
 
   const result = await cloudinary.v2.uploader.upload(images, {
     folder: "globalSecurity",
-    width: "150",
-    crop: "scale",
+    
   });
 
   const services = await Services.create({
@@ -57,8 +56,7 @@ export const updateServices = catchAsyncErrors(async (req, res, next) => {
   if (images !== "") {
     const result = await cloudinary.v2.uploader.upload(images, {
       folder: "globalsecurity",
-      width: "150",
-      crop: "scale",
+     
     });
     await cloudinary.v2.uploader.destroy(data?.images?.public_id);
     data.images = { public_id: result.public_id, url: result.secure_url };

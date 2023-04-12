@@ -32,6 +32,8 @@ const Contact = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const data = { fullname,email,number,subject,enquiry };
+
+    
     createContact(data);
   };
   const onChange=(e)=>{
