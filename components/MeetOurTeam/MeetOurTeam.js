@@ -46,11 +46,16 @@ const MeetOurTeam = () => {
   return (
     <>
       <div className={styles.maindiv}>
-        <div>
+      <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+    
           <h3 className="text-center">
             Meet Our <span className={styles.heading}>Team</span>
           </h3>
-        </div>
+       
+      </div>
+        
 
         <div
           className={styles.bgImageDiv}

@@ -1,0 +1,21 @@
+.contentContainer {
+  background-color: #e74646;
+  color: white;
+  padding: 1rem;
+}
+
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2vmax;
+  height: 20rem;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.Button {
+  background-color: #e74646;
+  border: none;
+}

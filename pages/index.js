@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import { Button } from "react-bootstrap";
 import CarouselComponent from "@/components/Carousel/Carousel";
 import Services from "@/components/Services/Services";
@@ -11,6 +10,9 @@ import { useGetWelcomeDataQuery } from "@/services/api";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Loader from "@/components/Loader/Loader";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Home() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -19,6 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     handleShow();
+    AOS.init();
   }, []);
   return (
     <>
@@ -41,9 +44,13 @@ export default function Home() {
               }}
             >
               Welcome to Global Security Services
-
               <p>
-              ustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release 
+                ustry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release
               </p>
             </Modal.Body>
           </Modal>
@@ -56,6 +63,10 @@ export default function Home() {
               content="width=device-width, initial-scale=1"
             />
             <link rel="icon" href="/favicon.ico" />
+            <link
+              href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+              rel="stylesheet"
+            />
           </Head>
           <main>
             <CarouselComponent />
@@ -68,24 +79,26 @@ export default function Home() {
                     backgroundImage: `url(${item?.images?.url})`,
                   }}
                 >
-                  <h3 className={styles.h3}>
-                    Welcome To <span className={styles.span}>Global</span>{" "}
-                    Security Service
-                  </h3>
+                  <div data-aos="zoom-in-down">
+                    <h3 className={styles.h3}>
+                      Welcome To <span className={styles.span}>Global</span>{" "}
+                      Security Service
+                    </h3>
 
-                  <div className={styles.homeDescriptionContainer}>
-                    <p>{item?.description}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "grid",
-                      placeItems: "center",
-                      padding: "2vmax",
-                    }}
-                  >
-                    <Link href={"/about"}>
-                      <Button variant="danger">AboutUs</Button>
-                    </Link>
+                    <div className={styles.homeDescriptionContainer}>
+                      <p>{item?.description}</p>
+                    </div>
+                    <div
+                      style={{
+                        display: "grid",
+                        placeItems: "center",
+                        padding: "2vmax",
+                      }}
+                    >
+                      <Link href={"/about"}>
+                        <Button variant="danger">AboutUs</Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );

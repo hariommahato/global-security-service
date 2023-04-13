@@ -26,7 +26,7 @@ const DashboardSidebar = () => {
         }}
       >
         <h5 className="text-center p-4">Dashboard</h5>
-      
+
         <p>
           Welcome <span style={{ color: "blue" }}>{data?.user?.email}</span>
         </p>
@@ -136,14 +136,16 @@ const DashboardSidebar = () => {
           </MenuItem>
         </SubMenu>
       </Menu>
-      <div style={{textAlign:"center",marginTop:"2rem"}}>
-      <Button variant="danger" onClick={()=>{
-        signOut({redirect:true,callbackUrl:"/"})
-      }}>
-        Logout
-      </Button>
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        <Button
+          variant="danger"
+          onClick={() => {
+            signOut({ redirect: true, callbackUrl: "/" });
+          }}
+        >
+          Logout
+        </Button>
       </div>
-     
     </Sidebar>
   );
 };

@@ -1,16 +1,67 @@
-.mainDiv {
-    height: 7rem;
+.row {
+  margin-top: 1vmax;
+  background-color: #f6f1e9;
+}
+.headingContainer {
+  display: flex;
+  gap: 0.2vmax;
+  font-size: 2vmax;
+  font-weight: 900;
+}
+.desc {
+  font-weight: 900;
+  text-align: justify;
+  color: gray;
+}
+.firstDiv {
+  width: 100%;
+}
+.card {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+}
+.buttomRow {
+  height: 40vw;
+  width: 100%;
+}
+.formCol {
+  position: absolute;
+  right: 0;
+  top: 20;
+  z-index: 1;
+  padding-right: 4rem;
+  padding-top: 4rem;
+}
+.leftCol {
+  width: 50%;
+  padding: 3vmax;
+}
+.rowImage {
+  height: 100%;
+  width: 100%;
+}
+.buttomRow {
+  position: relative;
+  z-index: 000;
+}
+.iconContainer {
+  padding: 1vmax;
+}
+@media only screen and (max-width: 600px) {
+  .mainDiv {
     width: 100%;
-    object-fit: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80");
-    position: relative;
+    text-align: justify;
+    word-wrap: break-word;
   }
-  .text {
-    color: white;
-    text-align: center;
-    padding-top: 2rem;
+  .formCol {
+    position: static;
+    padding: 0;
   }
-  
+  .formContainer {
+    width: 100%;
+  }
+  .leftCol {
+    width: 100%;
+  }
+}

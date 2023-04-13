@@ -7,19 +7,22 @@ import logo from "../../images/logo.png";
 import Link from "next/link";
 function Header() {
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-
-      className={styles.navbar}
-      sticky="top"
-    >
+    <Navbar collapseOnSelect expand="lg" className={styles.navbar} sticky="top">
       <Container>
         <Image src={logo} width={80} height={80} />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Brand as={Link} href="/">
-          Global Security Service
-        </Navbar.Brand>
+
+        <div
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
+          <Navbar.Brand as={Link} href="/">
+            Global Security Service
+          </Navbar.Brand>
+        </div>
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
@@ -38,8 +41,12 @@ function Header() {
             <Nav.Link as={Link} href="/feedback">
               Feedback
             </Nav.Link>
-            <Nav.Link as={Link} href="/faq" style={{color:"red",textDecoration:"underline"}}>
-             FAQS
+            <Nav.Link
+              as={Link}
+              href="/faq"
+              style={{ color: "red", textDecoration: "underline" }}
+            >
+              FAQS
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
