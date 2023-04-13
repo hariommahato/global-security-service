@@ -21,7 +21,7 @@ const nextConfig = {
     CLOUDINARY_API_KEY: "557477556585753",
     CLOUDINARY_API_SECRET: "sEE6XWIEmTmIvxFnr7Xkvg5HkMs",
     NEXTAUTH_SECRET: "asfsdfkulsghdfbjkshdfv",
-    NEXTAUTH_URL: "http://localhost:3000",
+    NEXTAUTH_URL: "https://global-security-service.vercel.app",
   },
 };
 

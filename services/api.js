@@ -3,7 +3,7 @@ import { HYDRATE } from "next-redux-wrapper";
 export const globalApi = createApi({
   reducerPath: "globalApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/api",
+    baseUrl: "https://global-security-service.vercel.app/api",
   }),
   tagTypes: [
     "Carousel",
